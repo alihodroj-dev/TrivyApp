@@ -11,7 +11,8 @@ import SwiftUI
 struct TrivyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoadingView()
+                .preferredColorScheme(.light)
         }
     }
 }

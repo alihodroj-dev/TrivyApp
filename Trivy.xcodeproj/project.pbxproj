@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1976ECCA2B96832400C73A26 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1976ECC92B96832400C73A26 /* Question.swift */; };
+		1976ECCC2B96873800C73A26 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1976ECCB2B96873800C73A26 /* GameViewModel.swift */; };
 		1980D79B2B94F32B005BB16A /* TrivyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D79A2B94F32B005BB16A /* TrivyApp.swift */; };
-		1980D79D2B94F32B005BB16A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D79C2B94F32B005BB16A /* ContentView.swift */; };
 		1980D79F2B94F32F005BB16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1980D79E2B94F32F005BB16A /* Assets.xcassets */; };
 		1980D7A22B94F32F005BB16A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1980D7A12B94F32F005BB16A /* Preview Assets.xcassets */; };
+		1980D7AC2B94F567005BB16A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D7AB2B94F567005BB16A /* LoadingView.swift */; };
+		1980D7B22B951FC2005BB16A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D7B12B951FC2005BB16A /* HomeView.swift */; };
+		1980D7B62B9529B2005BB16A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D7B52B9529B2005BB16A /* Category.swift */; };
+		1980D7B92B9529FE005BB16A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D7B82B9529FE005BB16A /* Data.swift */; };
+		1980D7BB2B958179005BB16A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980D7BA2B958179005BB16A /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1976ECC92B96832400C73A26 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1976ECCB2B96873800C73A26 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1980D7972B94F32B005BB16A /* Trivy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1980D79A2B94F32B005BB16A /* TrivyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrivyApp.swift; sourceTree = "<group>"; };
-		1980D79C2B94F32B005BB16A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1980D79E2B94F32F005BB16A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1980D7A12B94F32F005BB16A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1980D7AB2B94F567005BB16A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1980D7B12B951FC2005BB16A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1980D7B52B9529B2005BB16A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		1980D7B82B9529FE005BB16A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1980D7BA2B958179005BB16A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				1980D79A2B94F32B005BB16A /* TrivyApp.swift */,
-				1980D79C2B94F32B005BB16A /* ContentView.swift */,
+				1980D7B82B9529FE005BB16A /* Data.swift */,
+				1980D7AA2B94F542005BB16A /* Models */,
+				1980D7A82B94F534005BB16A /* Views */,
+				1980D7A92B94F539005BB16A /* ViewModels */,
 				1980D79E2B94F32F005BB16A /* Assets.xcassets */,
 				1980D7A02B94F32F005BB16A /* Preview Content */,
 			);
@@ -65,6 +80,33 @@
 				1980D7A12B94F32F005BB16A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1980D7A82B94F534005BB16A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1980D7AB2B94F567005BB16A /* LoadingView.swift */,
+				1980D7B12B951FC2005BB16A /* HomeView.swift */,
+				1980D7BA2B958179005BB16A /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1980D7A92B94F539005BB16A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1976ECCB2B96873800C73A26 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1980D7AA2B94F542005BB16A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1980D7B52B9529B2005BB16A /* Category.swift */,
+				1976ECC92B96832400C73A26 /* Question.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1980D79D2B94F32B005BB16A /* ContentView.swift in Sources */,
+				1980D7B22B951FC2005BB16A /* HomeView.swift in Sources */,
+				1980D7B92B9529FE005BB16A /* Data.swift in Sources */,
 				1980D79B2B94F32B005BB16A /* TrivyApp.swift in Sources */,
+				1980D7AC2B94F567005BB16A /* LoadingView.swift in Sources */,
+				1976ECCC2B96873800C73A26 /* GameViewModel.swift in Sources */,
+				1980D7BB2B958179005BB16A /* GameView.swift in Sources */,
+				1976ECCA2B96832400C73A26 /* Question.swift in Sources */,
+				1980D7B62B9529B2005BB16A /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +323,17 @@
 				DEVELOPMENT_TEAM = SJRUCMU4G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Trivy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +358,17 @@
 				DEVELOPMENT_TEAM = SJRUCMU4G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Trivy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
