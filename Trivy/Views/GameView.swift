@@ -58,12 +58,33 @@ struct GameView: View {
                     // Option Fields
                     ForEach(vm.randomizedQuestions[vm.currentQuestionIndex].options, id:\.self) { option in
                         HStack(alignment: .center, spacing: 0) {
-                            Image(systemName: vm.selectedAnswer == option ? "circle.fill" : "circle")
-                                .foregroundStyle(Color.accentColor)
-                                .shadow(radius: 0)
-                                .padding(.horizontal)
-                            Text(option)
-                                .fontWeight(.light)
+                            if(!vm.showCorrectAndWrong) {
+                                Image(systemName: vm.selectedAnswer == option ? "circle.fill" : "circle")
+                                    .foregroundStyle(Color.accentColor)
+                                    .shadow(radius: 0)
+                                    .padding(.horizontal)
+                                Text(option)
+                                    .foregroundStyle(Color.accentColor)
+                                    .fontWeight(.light)
+                            } else {
+                                if(option == vm.selectedAnswer && vm.selectedAnswer == vm.randomizedQuestions[vm.currentQuestionIndex].correctAnswer) {
+                                    Image(systemName: "circle.fill")
+                                        .foregroundStyle(Color.green)
+                                        .shadow(color: Color.green, radius: 0)
+                                        .padding(.horizontal)
+                                    Text(option)
+                                        .foregroundStyle(Color.green)
+                                        .fontWeight(.light)
+                                } else {
+                                    Image(systemName: vm.selectedAnswer == option ? "circle.fill" : "circle")
+                                        .foregroundStyle(option == vm.randomizedQuestions[vm.currentQuestionIndex].correctAnswer ? Color.green : Color.red)
+                                        .shadow(color: option == vm.randomizedQuestions[vm.currentQuestionIndex].correctAnswer ? Color.green : Color.red, radius: 0)
+                                        .padding(.horizontal)
+                                    Text(option)
+                                        .foregroundStyle(option == vm.randomizedQuestions[vm.currentQuestionIndex].correctAnswer ? Color.green : Color.red)
+                                        .fontWeight(.light)
+                                }
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(minHeight: 40)
@@ -96,6 +117,14 @@ struct GameView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical)
+                    .overlay(alignment: .leading) {
+                        if(vm.showCorrectAndWrong) {
+                            Text(vm.randomizedQuestions[vm.currentQuestionIndex].correctAnswer == vm.selectedAnswer ? "CORRECT!" : "WRONG!")
+                                .bold()
+                                .foregroundStyle(vm.randomizedQuestions[vm.currentQuestionIndex].correctAnswer == vm.selectedAnswer ? Color.green : Color.red)
+                                .padding(.leading, 30)
+                        }
+                    }
                     
                 } else {
                     RoundEndedView(vm: self.vm, category: self.category)

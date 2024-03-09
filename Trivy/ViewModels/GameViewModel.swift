@@ -16,6 +16,7 @@ final class GameViewModel: ObservableObject {
     @Published var score: Int = 0
     @Published var correctAnswers: Int = 0
     @Published var wrongtAnswers: Int = 0
+    @Published var showCorrectAndWrong: Bool = false
     
     public func startNewGame(category: Category) {
         withAnimation {
@@ -25,6 +26,7 @@ final class GameViewModel: ObservableObject {
             self.score = 0
             self.correctAnswers = 0
             self.wrongtAnswers = 0
+            self.showCorrectAndWrong = false
         }
     }
     
@@ -39,10 +41,14 @@ final class GameViewModel: ObservableObject {
                 self.score -= 100
                 print("Wrong")
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation {
+                self.showCorrectAndWrong = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 withAnimation {
                     self.currentQuestionIndex += 1
                     self.selectedAnswer = ""
+                    self.showCorrectAndWrong = false
                 }
             }
         }
