@@ -137,7 +137,7 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView(category: .init(name: "Animals", questions: AnimalsCategoryQuestions))
+    GameView(category: .init(name: "Animals", questions: animalsQuestions))
 }
 
 private struct RoundEndedView: View {

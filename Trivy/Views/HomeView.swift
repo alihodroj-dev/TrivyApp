@@ -12,18 +12,16 @@ struct HomeView: View {
     var body: some View {
         // Main Container
         NavigationStack {
-            VStack(spacing: 20) {
+            VStack(spacing: 10) {
                 // Top Bar
                 TopBar()
                 // Categories List
                 ScrollView(.vertical) {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
-                        ForEach(CATEGORIES, id:\.name) { category in
-                            CategoryCardView(category: category)
-                        }
+                    ForEach(CATEGORIES, id:\.name) { category in
+                        CategoryCardView(category: category)
                     }
                 }
-                .padding(.horizontal)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .background { Color.main.ignoresSafeArea() }
@@ -41,7 +39,7 @@ struct HomeView: View {
 private struct TopBar: View {
     
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: 12) {
             Image("TrivyTitle")
                 .resizable()
                 .frame(width: 120, height: 70)
@@ -51,9 +49,16 @@ private struct TopBar: View {
             Button {
                 // todo
             } label: {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.accent)
+                    .font(.title2)
+            }
+            Button {
+                // todo
+            } label: {
                 Image(systemName: "gearshape.fill")
                     .foregroundStyle(.accent)
-                    .font(.title)
+                    .font(.title2)
             }
         }
         .frame(maxWidth: .infinity)
@@ -67,28 +72,27 @@ private struct CategoryCardView: View {
     var category: Category
     
     var body: some View {
-        VStack(spacing: 0) {
-            Text(category.name)
-                .foregroundStyle(Color.main)
-                .font(.title.bold())
-                .padding(.vertical)
-            NavigationLink(value: category) {
-                HStack {
-                    Text("PLAY")
-                        .foregroundStyle(.main)
+        NavigationLink(value: category) {
+            HStack(spacing: 0) {
+                Text(category.name)
+                    .foregroundStyle(Color.main)
+                    .font(.title.bold())
+                    .padding()
+                Spacer()
+                HStack(spacing: 0) {
                     Image(systemName: "arrow.right")
                         .foregroundStyle(.main)
-                        .bold()
+                        .frame(width: 30)
+                        .frame(maxHeight: .infinity)
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .frame(height: 30)
-                .background { Color.accentColor.clipShape(RoundedRectangle(cornerRadius: 12)) }
-                .padding([.horizontal, .bottom], 6)
+                .padding(8)
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .background { Color.accentColor }
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .shadow(color: .black, radius: 2)
+        .padding(.horizontal, 10)
+        .padding(.top, 2)
     }
 }
