@@ -35,16 +35,14 @@ final class GameViewModel: ObservableObject {
             if(self.selectedAnswer == self.randomizedQuestions[self.currentQuestionIndex].correctAnswer) {
                 self.correctAnswers += 1
                 self.score += 100
-                print("Correct")
             } else {
                 self.wrongtAnswers += 1
                 self.score -= 100
-                print("Wrong")
             }
             withAnimation {
                 self.showCorrectAndWrong = true
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {
                     self.currentQuestionIndex += 1
                     self.selectedAnswer = ""

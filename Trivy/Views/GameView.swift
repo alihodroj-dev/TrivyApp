@@ -109,11 +109,11 @@ struct GameView: View {
                                 .foregroundStyle(.main)
                                 .frame(width: 100, height: 40)
                                 .background {
-                                    vm.selectedAnswer.isEmpty ? Color.accentColor.opacity(0.5).clipShape(RoundedRectangle(cornerRadius: 12)) : Color.accentColor.clipShape(RoundedRectangle(cornerRadius: 12))
+                                    vm.selectedAnswer.isEmpty || vm.showCorrectAndWrong ? Color.accentColor.opacity(0.5).clipShape(RoundedRectangle(cornerRadius: 12)) : Color.accentColor.clipShape(RoundedRectangle(cornerRadius: 12))
                                 }
                                 .shadow(radius: 10)
                         }
-                        .disabled(vm.selectedAnswer.isEmpty ? true: false)
+                        .disabled(vm.selectedAnswer.isEmpty || vm.showCorrectAndWrong ? true: false)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical)
